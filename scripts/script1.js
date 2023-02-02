@@ -9,6 +9,19 @@ let result = document.querySelector('.result');
 // GRAB ALL RADIOS USER CAN SELECT
 let userOptions = document.querySelectorAll('.userOptions input');
 
+// GRAB DISPLAY CLICK PARAGRAPH
+let displayClick = document.querySelector('.displayClick');
+
+userOptions.addEventListener('click', () => {
+    if (label[0].click) {
+        console.log(`I am returning rock`)
+    } else if (label[1].click) {
+        console.log(`I am returning paper`)
+    } else if (label[2].click) {
+        console.log(`I am returning scissors`)
+    };
+})
+
 // BEGIN GAME FUNCTION
 function begin() {
 
@@ -95,6 +108,8 @@ function begin() {
 
             // ENABLE STARTGAME BUTTON
             startGame.disabled = false;
+
+            clickedImagePara.textContent = ``;
 
             console.clear();
 

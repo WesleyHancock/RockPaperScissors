@@ -5,26 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RockPaperScissors</title>
+    <link rel="stylesheet" href="styling/style.css">
 </head>
 <body>
-    <h1>Rock Paper Scissors</h1>
+    <div class="container">
+        <h1>Choose your weapon:</h1>
 
-    <div class="userOptions">
-        <input type="radio" id="rock" name="userSelection" value="rock">
-        <label for="rock">Rock</label>
+        <div class="userOptions">
+            <div class="vertical">
+                <input type="radio" id="rock" name="userSelection" value="rock">
+                <label for="rock"><img class="image one" src="images/fist.png"></label>
+                <h3>rock</h3>
+            </div>
 
-        <input type="radio" id="paper" name="userSelection" value="paper">
-        <label for="paper">Paper</label>
+            <div class="vertical">
+                <input type="radio" id="paper" name="userSelection" value="paper">
+                <label for="paper"><img class="image two" src="images/palm-of-hand.png"></label>
+                <h3>paper</h3>
+            </div>
 
-        <input type="radio" id="scissors" name="userSelection" value="scissors">
-        <label for="scissors">Scissors</label>
-
+            <div class="vertical">
+                <input type="radio" id="scissors" name="userSelection" value="scissors">
+                <label for="scissors"><img class="image three" src="images/scissors.png"></label>
+                <h3>scissors</h3>
+            </div>
+        </div>
+        <p class="displayClick"></p>
         <button class="startGame">Start Game</button>
-    </div>
-    <p class="displayUsersChoice"></p>
-    <p class="displayCompsChoice"></p>
-    <p class="result"></p>
 
+        <p class="displayUsersChoice"></p>
+        <p class="displayCompsChoice"></p>
+        <p class="result"></p>
+    </div>
     <script src="scripts/script1.js"></script>
 </body>
 </html>
