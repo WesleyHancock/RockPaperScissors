@@ -6,21 +6,31 @@ startGame.addEventListener('click', begin);
 // select the paragraph to display the results
 let result = document.querySelector('.result');
 
-// GRAB ALL RADIOS USER CAN SELECT
-let userOptions = document.querySelectorAll('.userOptions input');
+// GRAB ALL BUTTONS USER CAN SELECT
+let userOptions = document.querySelectorAll('.userOptions button');
 
-// GRAB DISPLAY CLICK PARAGRAPH
+let option;
+
+// DISPLAY USERS CHOICE BEFORE START OF GAME
 let displayClick = document.querySelector('.displayClick');
 
-userOptions.addEventListener('click', () => {
-    if (label[0].click) {
-        console.log(`I am returning rock`)
-    } else if (label[1].click) {
-        console.log(`I am returning paper`)
-    } else if (label[2].click) {
-        console.log(`I am returning scissors`)
-    };
+
+
+userOptions[0].addEventListener('click', () => {
+    option = 0;
+    displayClick.textContent = `Rock is selected`;
 })
+
+userOptions[1].addEventListener('click', () => {
+    option = 1;
+    displayClick.textContent = `Paper is selected`;
+})
+
+userOptions[2].addEventListener('click', () => {
+    option = 2;
+    displayClick.textContent = `Scissors is selected`;
+})
+
 
 // BEGIN GAME FUNCTION
 function begin() {
@@ -28,15 +38,18 @@ function begin() {
     // DISABLE STARTGAME BUTTON
     startGame.disabled = true;
 
+    displayClick.textContent = '';
+
+
     // GET USERS CHOICE
     let usersChoice = function() {
-        if (userOptions[0].checked) {
+        if (option === 0) {
             console.log(`I am returning rock`)
             return 'rock';
-        } else if (userOptions[1].checked) {
+        } else if (option === 1) {
             console.log(`I am returning paper`)
             return 'paper';
-        } else if (userOptions[2].checked) {
+        } else if (option === 2) {
             console.log(`I am returning scissors`)
             return 'scissors';
         };
@@ -81,18 +94,17 @@ function begin() {
         let btn = function() {
             // CREATE BUTTON
             let button = document.createElement('button');
-            button.textContent = 'reset';
-            document.body.appendChild(button);
+            button.textContent = 'Reset';
+            document.querySelector('.container').appendChild(button);
             button.className = 'resetButton';
             button.addEventListener('click', reset);
         }
 
         // RESET FUNCTION
         let reset = function() {
-            // RESET THE RADIO BUTTONS
-            for(let i = 0; i < userOptions.length; i++) {
-                userOptions[i].checked = false;
-            };
+            // RESET THE USERS SELECTION
+            option = null;
+
 
             // RESET THE RESULTS DISPLAY
             result.textContent = '';
@@ -109,8 +121,6 @@ function begin() {
             // ENABLE STARTGAME BUTTON
             startGame.disabled = false;
 
-            clickedImagePara.textContent = ``;
-
             console.clear();
 
         };
@@ -120,33 +130,41 @@ function begin() {
             result.textContent = `You have not selected a value.`;
             result.style.backgroundColor = 'red';
             result.style.color = 'white';
+            result.style.padding = '10px';
+            result.style.borderRadius = '10px';
             return btn();
         }
 
         // DRAW FUNCTION
         let draw = function() {
             result.textContent = `You selected ${usersSelection} and the computor
-            selected ${compSelection} therefore it is a DRAW`;
+            selected ${compSelection}, therefore it is a DRAW`;
             result.style.backgroundColor = 'black';
             result.style.color = 'white';
+            result.style.padding = '10px';
+            result.style.borderRadius = '10px';
             return btn();
         };
 
         // WIN FUNCTION
         let win = function() {
             result.textContent = `You selected ${usersSelection} and the computor
-            selected ${compSelection} therefore you WIN!`;
+            selected ${compSelection}, therefore you WIN!`;
             result.style.backgroundColor = 'green';
             result.style.color = 'white';
+            result.style.padding = '10px';
+            result.style.borderRadius = '10px';
             return btn();
         }
 
         // LOSE FUNCTION
         let lose = function() {
             result.textContent = `You selected ${usersSelection} and the computor
-            selected ${compSelection} therefore you LOSE!`;
+            selected ${compSelection}, therefore you LOSE!`;
             result.style.backgroundColor = 'red';
             result.style.color = 'white';
+            result.style.padding = '10px';
+            result.style.borderRadius = '10px';
             return btn();
         }
 

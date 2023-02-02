@@ -2,6 +2,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    /* font-family: 'Nunito', sans-serif; */
+    font-family: 'Roboto', sans-serif;
     /* outline: 1px solid red; */
 }
 
@@ -10,7 +12,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 100px;
+    padding: 50px;
 }
 
 .container {
@@ -18,11 +20,17 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 40px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    border-radius: 10px;
 }
 
 .container h1 {
     margin: 20px 0px;
     font-size: 3rem;
+    font-weight: 900;
+    color: rgb(61, 61, 61);
+    text-transform: uppercase;
 }
 
 .container .userOptions {
@@ -40,37 +48,82 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
 }
 
-.container .userOptions label {
-    margin: 10px 10px;
+.vertical button {
+    margin-bottom: 15px;
 }
 
-.container .userOptions label:hover {
-    cursor: pointer;
+h3 {
+    min-width: 130px;
+    text-align: center;
+    color: rgb(122, 122, 122);
 }
 
+.userOptions button {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+}
 
-.container .userOptions input {
-    display: none;
+.image {
+    width: 60px;
+    height: auto;
+    opacity: 0.6;
+}
+
+.image.one {
+    width: 70px;
+    height: auto;
 }
 
 .image:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
+    cursor: pointer;
+    opacity: 1;
+}
+
+button:hover + h3 {
+    /* transform: scale(0.9); */
+    color: rgba(0, 0, 0, 1);
 }
 
 .image:active {
     transform: scale(1);
 }
 
-.image {
-    width: 60px;
-    height: auto;
-}
 
 .container .startGame {
     margin: 20px 0px;
     padding: 5px 8px;
     font-size: 1rem;
+    border-radius: 5px;
+    border: none;
 }
+
+.container .startGame:hover {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    outline: 2px solid rgba(99, 99, 99, 0.2);
+    font-weight: 600;
+    transform: scale(1.07);
+}
+
+
+.resetButton {
+    margin: 20px 0px;
+    padding: 5px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+}
+
+.resetButton:hover {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    outline: 2px solid rgba(99, 99, 99, 0.2);
+    font-weight: 600;
+    transform: scale(1.07);
+}
+/* .result {
+    padding: 10px;
+    border-radius: 6px;
+    margin: 10px 0px;
+} */
