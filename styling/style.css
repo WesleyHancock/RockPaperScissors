@@ -33,6 +33,32 @@ body {
     text-transform: uppercase;
 }
 
+.container .score {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .score .tally {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    margin: 20px 0px;
+}
+
+.score h2 {
+    color: rgb(61, 61, 61);
+}
+
+.userTally {
+    color: rgb(61, 61, 61);
+}
+
+.compTally {
+    color: rgb(61, 61, 61);
+}
+
 .container .userOptions {
     display: flex;
     flex-direction: row;
