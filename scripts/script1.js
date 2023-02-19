@@ -114,7 +114,7 @@ function begin() {
         // RESET BUTTON FUNCTION
         let btn = function() {
             // CREATE BUTTON
-            let button = document.createElement('button');
+            let button = document.createElement('button');    
             button.textContent = 'Reset';
             document.querySelector('.container').appendChild(button);
             button.className = 'resetButton';
